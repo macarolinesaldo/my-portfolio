@@ -1,121 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caroline Portfolio</title>
-  <link rel="stylesheet" href="Assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caroline Saldo | UI/UX Designer & Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <h1>Caroline</h1>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">Caroline</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h2>Hi There!</h2>
-    <h1>I am Caroline Saldo</h1>
-    <p>UI/UX Designer & Frontend Developer</p>
-    <a href="#contact" class="btn">Contact Me</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    I am a Computer Science student focused on UI/UX design and frontend development.
-    I create clean, user-friendly systems and build projects like real-world applications.
-  </p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section dark">
-  <h2>My Skills</h2>
-  <div class="grid">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">UI/UX Design</div>
-    <div class="card">Figma</div>
-    <div class="card">Frontend Development</div>
-  </div>
-</section>
-
-<!-- CERTIFICATES -->
-<section id="certificates" class="section">
-  <h2>Certificates</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>UI/UX Design Certificate</h3>
-      <p>Completed training in user interface and user experience design.</p>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi There!</p>
+        <p class="hero-iam">I am</p>
+        <h1 class="hero-name">Caroline Saldo</h1>
+        <p class="hero-title">UI/UX Designer &amp; Frontend Developer</p>
+        <a href="#contact" class="btn-primary">Contact Me</a>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-circle">
+          <!-- Replace with your own photo -->
+          <img src="assets/images/profile.jpg" alt="Caroline Saldo" class="hero-photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')" />
+        </div>
+        <div class="hero-blob"></div>
+      </div>
     </div>
-
-    <div class="card">
-      <h3>Web Development Certificate</h3>
-      <p>Learned fundamentals of HTML, CSS, and responsive design.</p>
+    <div class="hero-bubbles">
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>OJT Completion (COA)</h3>
-      <p>Completed on-the-job training in a government agency.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>NutriCycle</h3>
-      <p>
-        An IoT-based waste-to-value system that converts vegetable waste into poultry feed and compost.
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="divider"></div>
+      <p class="about-text">
+        I am a Computer Science student focused on UI/UX design and frontend development.
+        I create clean, user-friendly systems and build projects like real-world applications.
       </p>
-      <small><b>Role:</b> UI/UX Designer & Frontend Developer</small><br>
-      <small><b>Tools:</b> Figma, HTML, CSS</small>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>
-        A personal portfolio website showcasing my projects, skills, and experience with a clean and responsive design.
-      </p>
-      <small><b>Role:</b> Frontend Developer</small><br>
-      <small><b>Tools:</b> HTML, CSS, JavaScript</small>
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="divider"></div>
+      <div class="skills-list">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Figma</span>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Login System</h3>
-      <p>
-        A simple user authentication system with validation and limited login attempts.
-      </p>
-      <small><b>Role:</b> Developer</small><br>
-      <small><b>Tools:</b> Python</small>
+  <!-- CERTIFICATES -->
+  <section class="section" id="certificates">
+    <div class="container">
+      <h2 class="section-title">Certificates</h2>
+      <div class="divider"></div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" id="cert-prev" aria-label="Previous">&#8249;</button>
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="cert-track">
+            <div class="carousel-item">UI/UX Design Certificate</div>
+            <div class="carousel-item">Web Development Certificate</div>
+            <div class="carousel-item">OJT Completion (COA)</div>
+          </div>
+        </div>
+        <button class="carousel-btn next" id="cert-next" aria-label="Next">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="cert-dots"></div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- PROJECTS -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="divider"></div>
+      <div class="projects-carousel">
+        <button class="carousel-btn prev" id="proj-prev" aria-label="Previous">&#8249;</button>
+        <div class="projects-track-container">
+          <div class="projects-track" id="proj-track">
 
-<!-- CONTACT -->
-<section id="contact" class="section dark">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>Location: Philippines</p>
-</section>
+            <div class="project-card">
+              <div class="project-img-wrapper">
+                <img src="assets/images/project1.jpg" alt="NutriCycle" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=NutriCycle'" />
+              </div>
+              <h3 class="project-title">NutriCycle</h3>
+              <p class="project-desc">An IoT-based waste-to-value system that converts vegetable waste into poultry feed and compost.</p>
+              <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
+              <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS</small>
+              <a href="#" class="btn-secondary">View Project</a>
+            </div>
 
+            <div class="project-card">
+              <div class="project-img-wrapper">
+                <img src="assets/images/project2.jpg" alt="Portfolio Website" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=Portfolio'" />
+              </div>
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-desc">A personal portfolio website showcasing my projects, skills, and experience with a clean and responsive design.</p>
+              <small class="project-meta"><b>Role:</b> Frontend Developer</small>
+              <small class="project-meta"><b>Tools:</b> HTML, CSS, JavaScript</small>
+              <a href="#" class="btn-secondary">View Project</a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-img-wrapper">
+                <img src="assets/images/project3.jpg" alt="Login System" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=Login+System'" />
+              </div>
+              <h3 class="project-title">Login System</h3>
+              <p class="project-desc">A simple user authentication system with validation and limited login attempts.</p>
+              <small class="project-meta"><b>Role:</b> Developer</small>
+              <small class="project-meta"><b>Tools:</b> Python</small>
+              <a href="#" class="btn-secondary">View Project</a>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-btn next" id="proj-next" aria-label="Next">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="proj-dots"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="hero-bg contact-bg"></div>
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="divider"></div>
+      <div class="contact-form-wrapper">
+        <input type="text" class="form-input" placeholder="Your Name" />
+        <input type="email" class="form-input" placeholder="Your Email" />
+        <textarea class="form-input form-textarea" placeholder="Your Message"></textarea>
+        <button class="btn-primary btn-send" id="send-btn">Send Message</button>
+      </div>
+    </div>
+    <div class="hero-bubbles contact-bubbles">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Caroline. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
