@@ -1,178 +1,287 @@
-// --- NAVBAR: scroll shadow + hamburger ---
-const navbar    = document.getElementById('navbar');
+// --- MOBILE NAV ---
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.querySelector('.nav-links');
+const navLinks = document.getElementById('nav-links');
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-
-// --- SCROLL REVEAL ---
-const revealEls = document.querySelectorAll('.section-title, .divider, .about-text, .skills-list, .carousel-wrapper, .projects-carousel, .contact-form-wrapper, .footer');
-
-revealEls.forEach(el => el.classList.add('reveal'));
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
   });
-}, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-
-// --- CAROUSEL FACTORY ---
-function initCarousel(trackId, prevBtnId, nextBtnId, dotsId) {
-  const track   = document.getElementById(trackId);
-  const prevBtn = document.getElementById(prevBtnId);
-  const nextBtn = document.getElementById(nextBtnId);
-  const dotsContainer = document.getElementById(dotsId);
-
-  if (!track) return;
-
-  const items = track.children;
-  let current = 0;
-  const total  = items.length;
-
-  for (let i = 0; i < total; i++) {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  }
-
-  function goTo(index) {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
     });
-  }
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  setInterval(() => goTo(current + 1), 4000);
+  });
 }
 
-initCarousel('cert-track', 'cert-prev', 'cert-next', 'cert-dots');
-initCarousel('proj-track', 'proj-prev', 'proj-next', 'proj-dots');
+// --- NAVBAR SHADOW ON SCROLL ---
+const navbar = document.querySelector('.navbar');
 
-// --- ACTIVE NAV LINK on scroll ---
-const sections = document.querySelectorAll('section[id]');
+function handleNavbarScroll() {
+  if (!navbar) return;
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
 
-window.addEventListener('scroll', () => {
-  let scrollY = window.scrollY + 100;
+window.addEventListener('scroll', handleNavbarScroll);
+window.addEventListener('load', handleNavbarScroll);
 
-  sections.forEach(section => {
-    const top    = section.offsetTop;
-    const height = section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const link   = document.querySelector(`.nav-links a[href="#${id}"]`);
+// --- REVEAL ON SCROLL ---
+const revealElements = document.querySelectorAll(
+  '.section, .experience-card, .skill-card, .cert-item, .project-card'
+);
 
-    if (link) {
-      link.style.color = (scrollY >= top && scrollY < top + height)
-        ? 'var(--pink)'
-        : '';
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight * 0.88;
+
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.classList.add('visible');
     }
   });
-});
+}
 
+revealElements.forEach(el => el.classList.add('reveal'));
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// --- ACTIVE NAV LINK ON SCROLL ---
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveNavLink() {
+  const scrollY = window.scrollY + 120;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+    if (!link) return;
+
+    if (scrollY >= top && scrollY < top + height) {
+      link.style.color = 'var(--pink)';
+    } else {
+      link.style.color = '';
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
+
+// --- CERTIFICATES CAROUSEL ---
+const certTrack = document.getElementById('cert-track');
+const certItems = document.querySelectorAll('.cert-item');
+const certPrev = document.getElementById('cert-prev');
+const certNext = document.getElementById('cert-next');
+const certDots = document.getElementById('cert-dots');
+
+let certIndex = 0;
+
+function updateCertCarousel() {
+  if (!certTrack || !certItems.length) return;
+
+  certTrack.style.transform = `translateX(-${certIndex * 100}%)`;
+
+  if (certDots) {
+    certDots.innerHTML = '';
+
+    certItems.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `dot ${i === certIndex ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to certificate ${i + 1}`);
+      dot.addEventListener('click', () => {
+        certIndex = i;
+        updateCertCarousel();
+      });
+      certDots.appendChild(dot);
+    });
+  }
+}
+
+if (certPrev) {
+  certPrev.addEventListener('click', () => {
+    certIndex = (certIndex - 1 + certItems.length) % certItems.length;
+    updateCertCarousel();
+  });
+}
+
+if (certNext) {
+  certNext.addEventListener('click', () => {
+    certIndex = (certIndex + 1) % certItems.length;
+    updateCertCarousel();
+  });
+}
+
+updateCertCarousel();
+
+// --- PROJECTS CAROUSEL ---
+const projTrack = document.getElementById('proj-track');
+const projItems = document.querySelectorAll('.project-card');
+const projPrev = document.getElementById('proj-prev');
+const projNext = document.getElementById('proj-next');
+const projDots = document.getElementById('proj-dots');
+
+let projIndex = 0;
+
+function updateProjCarousel() {
+  if (!projTrack || !projItems.length) return;
+
+  projTrack.style.transform = `translateX(-${projIndex * 100}%)`;
+
+  if (projDots) {
+    projDots.innerHTML = '';
+
+    projItems.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `dot ${i === projIndex ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+      dot.addEventListener('click', () => {
+        projIndex = i;
+        updateProjCarousel();
+      });
+      projDots.appendChild(dot);
+    });
+  }
+}
+
+if (projPrev) {
+  projPrev.addEventListener('click', () => {
+    projIndex = (projIndex - 1 + projItems.length) % projItems.length;
+    updateProjCarousel();
+  });
+}
+
+if (projNext) {
+  projNext.addEventListener('click', () => {
+    projIndex = (projIndex + 1) % projItems.length;
+    updateProjCarousel();
+  });
+}
+
+updateProjCarousel();
 
 // --- LIGHTBOX ---
-const lightbox        = document.getElementById('lightbox');
-const lightboxImg     = document.getElementById('lightbox-img');
-const lightboxClose   = document.getElementById('lightbox-close');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
 const lightboxOverlay = document.getElementById('lightbox-overlay');
 
-document.querySelectorAll('.cert-item').forEach(item => {
-  item.addEventListener('click', () => {
-    lightboxImg.src = item.dataset.img;
+document.querySelectorAll('.cert-item img, .cert-thumb').forEach(img => {
+  img.addEventListener('click', () => {
+    if (!lightbox || !lightboxImg) return;
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || 'Certificate preview';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 });
 
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxOverlay.addEventListener('click', closeLightbox);
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
-});
-
 function closeLightbox() {
+  if (!lightbox) return;
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
 
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxOverlay) {
+  lightboxOverlay.addEventListener('click', closeLightbox);
+}
 
 // --- PROJECT MODAL ---
-const projModal        = document.getElementById('proj-modal');
+const projModal = document.getElementById('proj-modal');
 const projModalOverlay = document.getElementById('proj-modal-overlay');
-const projModalClose   = document.getElementById('proj-modal-close');
+const projModalClose = document.getElementById('proj-modal-close');
 
-document.querySelectorAll('.view-project-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.getElementById('proj-modal-title').textContent    = btn.dataset.title;
-    document.getElementById('proj-modal-role').textContent     = btn.dataset.role;
-    document.getElementById('proj-modal-duration').textContent = btn.dataset.duration;
-    document.getElementById('proj-modal-tools').textContent    = '🛠 ' + btn.dataset.tools;
-    document.getElementById('proj-modal-situation').textContent = btn.dataset.situation;
-    document.getElementById('proj-modal-task').textContent     = btn.dataset.task;
-    document.getElementById('proj-modal-action').textContent   = btn.dataset.action;
-    document.getElementById('proj-modal-result').textContent   = btn.dataset.result;
+function openProjModal(btn) {
+  if (!projModal) return;
 
-    // Show or hide modal image
-    const imgWrapper = document.getElementById('proj-modal-img-wrapper');
-    const modalImg   = document.getElementById('proj-modal-img');
+  const title = document.getElementById('proj-modal-title');
+  const role = document.getElementById('proj-modal-role');
+  const duration = document.getElementById('proj-modal-duration');
+  const tools = document.getElementById('proj-modal-tools');
+  const situation = document.getElementById('proj-modal-situation');
+  const task = document.getElementById('proj-modal-task');
+  const action = document.getElementById('proj-modal-action');
+  const result = document.getElementById('proj-modal-result');
+  const imgWrapper = document.getElementById('proj-modal-img-wrapper');
+  const modalImg = document.getElementById('proj-modal-img');
+  const figmaLink = document.getElementById('proj-modal-figma');
+
+  if (title) title.textContent = btn.dataset.title || '';
+  if (role) role.textContent = btn.dataset.role || '';
+  if (duration) duration.textContent = btn.dataset.duration || '';
+  if (tools) tools.textContent = btn.dataset.tools ? '🛠 ' + btn.dataset.tools : '';
+  if (situation) situation.textContent = btn.dataset.situation || '';
+  if (task) task.textContent = btn.dataset.task || '';
+  if (action) action.textContent = btn.dataset.action || '';
+  if (result) result.textContent = btn.dataset.result || '';
+
+  if (imgWrapper && modalImg) {
+    imgWrapper.classList.remove('hidden', 'logo', 'screenshot');
+
     if (btn.dataset.img) {
       modalImg.src = btn.dataset.img;
-      imgWrapper.classList.remove('hidden');
+      modalImg.alt = (btn.dataset.title || 'Project') + ' preview';
+
+      if (btn.dataset.type === 'logo') {
+        imgWrapper.classList.add('logo');
+      } else {
+        imgWrapper.classList.add('screenshot');
+      }
     } else {
       modalImg.src = '';
+      modalImg.alt = '';
       imgWrapper.classList.add('hidden');
     }
+  }
 
-    // Show or hide Figma link
-    const figmaLink = document.getElementById('proj-modal-figma');
+  if (figmaLink) {
     if (btn.dataset.figma) {
       figmaLink.href = btn.dataset.figma;
       figmaLink.style.display = 'inline-block';
     } else {
       figmaLink.style.display = 'none';
     }
+  }
 
-    projModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-projModalClose.addEventListener('click', closeProjModal);
-projModalOverlay.addEventListener('click', closeProjModal);
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeProjModal();
-});
+  projModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
 function closeProjModal() {
+  if (!projModal) return;
   projModal.classList.remove('active');
   document.body.style.overflow = '';
 }
-if (btn.dataset.type === "logo") {
-  imgWrapper.classList.add("logo");
-} else {
-  imgWrapper.classList.remove("logo");
+
+document.querySelectorAll('.view-project-btn').forEach(btn => {
+  btn.addEventListener('click', () => openProjModal(btn));
+});
+
+if (projModalClose) {
+  projModalClose.addEventListener('click', closeProjModal);
 }
+
+if (projModalOverlay) {
+  projModalOverlay.addEventListener('click', closeProjModal);
+}
+
+// --- ESC KEY CLOSE FOR MODALS ---
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+    closeProjModal();
+  }
+});

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caroline Saldo | UI/UX Designer & Frontend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,8 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">Caroline</div>
-    <ul class="nav-links">
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -22,14 +23,18 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
     <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
+
     <div class="hero-content">
       <div class="hero-text">
         <p class="hero-greeting">Hi There!</p>
@@ -38,26 +43,47 @@
         <p class="hero-title">UI/UX Designer &amp; Frontend Developer</p>
         <a href="#contact" class="btn-primary">Contact Me</a>
       </div>
+
       <div class="hero-image-wrapper">
         <div class="hero-circle">
-          <img src="assets/images/profile.png" alt="Ma. Caroline Saldo" class="hero-photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')" />
+          <img
+            src="assets/images/profile.png"
+            alt="Ma. Caroline Saldo"
+            class="hero-photo"
+            onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')"
+          />
         </div>
         <div class="hero-blob"></div>
       </div>
     </div>
-    <div class="hero-bubbles">
-      <span></span><span></span><span></span><span></span><span></span>
+
+    <div class="hero-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section about-section" id="about">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="divider"></div>
+
       <p class="about-text">
         I'm a 4th-year BS Computer Science student at the University of Caloocan City, specializing in UI/UX design and front-end development. I chose Computer Science because I am passionate about creating innovative technology that transforms complex workflows into simple, intuitive experiences.
       </p>
+
       <p class="about-text">
         I aspire to grow as a front-end developer who builds user-friendly, high-impact digital products, combining design thinking, creativity, and technology to solve real-world problems.
       </p>
@@ -66,23 +92,35 @@
 
   <!-- EXPERIENCE -->
   <section class="section experience-section" id="experience">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="divider"></div>
+
       <div class="experience-card">
         <div class="exp-header">
           <div class="exp-icon">
             <img src="assets/images/icons/coa.png" alt="COA Logo" />
           </div>
+
           <div class="exp-meta">
             <h3 class="exp-role">Documentation Specialist / Frontend Developer (Intern)</h3>
             <p class="exp-company">Commission on Audit</p>
             <p class="exp-date">May 2025 – September 2025</p>
           </div>
         </div>
+
         <p class="exp-desc">
           Worked on a Digital Signing Service (DSS) developed using ASP.NET, contributing to frontend development and system documentation. Designed UI components and visual assets using Figma and supported a multi-step document workflow including file upload, signer selection, and document preview to improve efficiency in digital document handling.
         </p>
+
         <div class="exp-skills">
           <span class="exp-tag">Front-End Development</span>
           <span class="exp-tag">ASP.NET</span>
@@ -101,42 +139,57 @@
 
   <!-- SKILLS -->
   <section class="section skills-section" id="skills">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="container">
       <h2 class="section-title">Skills</h2>
       <div class="divider"></div>
+
       <div class="skills-grid">
         <div class="skill-card">
           <img src="assets/images/icons/html-5.png" alt="HTML Logo">
           <h3>HTML</h3>
           <p>Markup language for structuring web pages.</p>
         </div>
+
         <div class="skill-card">
           <img src="assets/images/icons/css-file.png" alt="CSS Logo">
           <h3>CSS</h3>
           <p>Styling web pages for layout and design.</p>
         </div>
+
         <div class="skill-card">
           <img src="assets/images/icons/javascript.png" alt="JavaScript Logo">
           <h3>JavaScript</h3>
           <p>Programming language for dynamic web functionality.</p>
         </div>
       </div>
+
       <div class="skills-grid skills-grid--four">
         <div class="skill-card">
           <img src="assets/images/icons/python.png" alt="Python Logo">
           <h3>Python</h3>
           <p>General-purpose programming and scripting language.</p>
         </div>
+
         <div class="skill-card">
           <img src="assets/images/icons/figma.png" alt="Figma Logo">
           <h3>UI/UX Design</h3>
           <p>User-centered design using Figma.</p>
         </div>
+
         <div class="skill-card">
           <img src="assets/images/icons/after-effects.png" alt="Adobe Logo">
           <h3>Adobe Tools</h3>
-          <p>After Effects & Media Encoder for motion and media.</p>
+          <p>After Effects &amp; Media Encoder for motion and media.</p>
         </div>
+
         <div class="skill-card">
           <img src="assets/images/icons/code.png" alt="Developer Tools Logo">
           <h3>Developer Productivity</h3>
@@ -148,18 +201,28 @@
 
   <!-- CERTIFICATES -->
   <section class="section" id="certificates">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="container">
       <h2 class="section-title">Certificates</h2>
       <div class="divider"></div>
+
       <div class="carousel-wrapper">
         <button class="carousel-btn prev" id="cert-prev" aria-label="Previous">&#8249;</button>
+
         <div class="carousel-track-container">
           <div class="carousel-track" id="cert-track">
 
             <div class="carousel-item cert-item" data-img="assets/images/certificates/webdev.jpg">
               <img src="assets/images/certificates/webdev.jpg" alt="Web Development Certificate" class="cert-thumb" />
               <div class="cert-info">
-                <h3 class="cert-title">Web Development for Beginners: HTML, CSS & JavaScript</h3>
+                <h3 class="cert-title">Web Development for Beginners: HTML, CSS &amp; JavaScript</h3>
                 <p class="cert-issuer">Udemy</p>
                 <p class="cert-date">Feb. 20, 2026</p>
               </div>
@@ -239,8 +302,10 @@
 
           </div>
         </div>
+
         <button class="carousel-btn next" id="cert-next" aria-label="Next">&#8250;</button>
       </div>
+
       <div class="carousel-dots" id="cert-dots"></div>
     </div>
   </section>
@@ -256,87 +321,100 @@
 
   <!-- PROJECTS -->
   <section class="section section-alt" id="projects">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="divider"></div>
+
       <div class="projects-carousel">
         <button class="carousel-btn prev" id="proj-prev" aria-label="Previous">&#8249;</button>
+
         <div class="projects-track-container">
           <div class="projects-track" id="proj-track">
 
-                <!-- NutriCycle -->
-          <div class="project-card">
-            <div class="project-placeholder">
-              <span class="project-placeholder-title">NutriCycle</span>
+            <!-- NutriCycle -->
+            <div class="project-card">
+              <div class="project-placeholder">
+                <span class="project-placeholder-title">NutriCycle</span>
+              </div>
+              <p class="project-desc">An IoT-based system that converts vegetable waste into poultry feed and compost using AI and hardware automation.</p>
+              <small class="project-meta"><b>Role:</b> UI/UX Designer &amp; Frontend Developer</small>
+              <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, Raspberry Pi, ESP32</small>
+              <button class="btn-secondary view-project-btn"
+                data-title="NutriCycle"
+                data-role="UI/UX Designer & Frontend Developer"
+                data-tools="Figma, HTML, CSS, Raspberry Pi, ESP32"
+                data-duration="Sep 2025 – Present"
+                data-img="assets/images/projects/Logo.png"
+                data-type="logo"
+                data-situation="NutriCycle was developed to address increasing vegetable waste in wet markets in the Philippines, where large amounts of leafy vegetables are discarded daily. At the same time, poultry farmers face high feed costs making up 60–70% of production expenses."
+                data-task="I contributed to the design and documentation of NutriCycle, managed the composting processes, and assisted with IoT integration to develop a system that efficiently converts vegetable waste into poultry feed and compost."
+                data-action="We built a machine with AI-based image classification, Raspberry Pi processing, and ESP32-controlled hardware for automated sorting. We also developed a mobile app for real-time monitoring and conducted system testing."
+                data-result="NutriCycle successfully transformed vegetable waste into valuable agricultural products, reducing landfill waste and offering a cost-effective solution for poultry farmers while promoting sustainability.">
+                View Project
+              </button>
             </div>
-            <p class="project-desc">An IoT-based system that converts vegetable waste into poultry feed and compost using AI and hardware automation.</p>
-            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
-            <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, Raspberry Pi, ESP32</small>
-            <button class="btn-secondary view-project-btn"
-              data-title="NutriCycle"
-              data-role="UI/UX Designer & Frontend Developer"
-              data-tools="Figma, HTML, CSS, Raspberry Pi, ESP32"
-              data-duration="Sep 2025 – Present"
-              data-img="assets/images/projects/Logo.png"
-              data-type="logo"
-              data-situation="NutriCycle was developed to address increasing vegetable waste in wet markets in the Philippines, where large amounts of leafy vegetables are discarded daily. At the same time, poultry farmers face high feed costs making up 60–70% of production expenses."
-              data-task="I contributed to the design and documentation of NutriCycle, managed the composting processes, and assisted with IoT integration to develop a system that efficiently converts vegetable waste into poultry feed and compost."
-              data-action="We built a machine with AI-based image classification, Raspberry Pi processing, and ESP32-controlled hardware for automated sorting. We also developed a mobile app for real-time monitoring and conducted system testing."
-              data-result="NutriCycle successfully transformed vegetable waste into valuable agricultural products, reducing landfill waste and offering a cost-effective solution for poultry farmers while promoting sustainability.">
-              View Project
-            </button>
-          </div>
 
-          <!-- Fitscale -->
-          <div class="project-card">
-            <div class="project-placeholder">
-              <span class="project-placeholder-title">Fitscale</span>
+            <!-- Fitscale -->
+            <div class="project-card">
+              <div class="project-placeholder">
+                <span class="project-placeholder-title">Fitscale</span>
+              </div>
+              <p class="project-desc">A fitness tracking app with a clean, intuitive interface to help users monitor workouts and progress.</p>
+              <small class="project-meta"><b>Role:</b> UI/UX Designer &amp; Frontend Developer</small>
+              <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, JavaScript</small>
+              <button class="btn-secondary view-project-btn"
+                data-title="Fitscale"
+                data-role="UI/UX Designer & Frontend Developer"
+                data-tools="Figma, HTML, CSS, JavaScript"
+                data-duration="Aug 2024 – Apr 2025"
+                data-img="assets/images/projects/fitscale-logo.png"
+                data-type="logo"
+                data-situation="Many fitness apps were either too complex or lacked intuitive design, making it difficult for users to consistently track their progress."
+                data-task="My role was to contribute to the UI/UX design and frontend development, ensuring the app's interface was clean, accessible, and motivating."
+                data-action="Designed wireframes and interactive prototypes in Figma. Implemented responsive layouts using HTML, CSS, and JavaScript. Applied user-centered design principles to create a visually appealing interface."
+                data-result="The Fitscale app successfully helped users track workouts and progress with ease. My contributions improved onboarding usability and reduced drop-off rates during initial setup."
+                data-figma="https://www.figma.com/design/dsXZZt7aSX2yaFvyMdPOKi/SoftwareEngr_FitScale?m=auto&t=yRgZQxzpF9vBJ7l4-1">
+                View Project
+              </button>
             </div>
-            <p class="project-desc">A fitness tracking app with a clean, intuitive interface to help users monitor workouts and progress.</p>
-            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
-            <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, JavaScript</small>
-            <button class="btn-secondary view-project-btn"
-              data-title="Fitscale"
-              data-role="UI/UX Designer & Frontend Developer"
-              data-tools="Figma, HTML, CSS, JavaScript"
-              data-duration="Aug 2024 – Apr 2025"
-              data-img="assets/images/projects/fitscale-logo.png"
-              data-type="logo"
-              data-situation="Many fitness apps were either too complex or lacked intuitive design, making it difficult for users to consistently track their progress."
-              data-task="My role was to contribute to the UI/UX design and frontend development, ensuring the app's interface was clean, accessible, and motivating."
-              data-action="Designed wireframes and interactive prototypes in Figma. Implemented responsive layouts using HTML, CSS, and JavaScript. Applied user-centered design principles to create a visually appealing interface."
-              data-result="The Fitscale app successfully helped users track workouts and progress with ease. My contributions improved onboarding usability and reduced drop-off rates during initial setup."
-              data-figma="https://www.figma.com/design/dsXZZt7aSX2yaFvyMdPOKi/SoftwareEngr_FitScale?m=auto&t=yRgZQxzpF9vBJ7l4-1">
-              View Project
-            </button>
-          </div>
 
-          <!-- Digital Signing Service -->
-          <div class="project-card">
-            <div class="project-placeholder">
-              <span class="project-placeholder-title">Digital Signing Service</span>
+            <!-- Digital Signing Service -->
+            <div class="project-card">
+              <div class="project-placeholder">
+                <span class="project-placeholder-title">Digital Signing Service</span>
+              </div>
+              <p class="project-desc">A web application for non-COA entities to upload, review, approve, and digitally sign documents.</p>
+              <small class="project-meta"><b>Role:</b> UI/UX Designer &amp; Frontend Developer</small>
+              <small class="project-meta"><b>Tools:</b> Figma, ASP.NET, C#, CSS, JavaScript</small>
+              <button class="btn-secondary view-project-btn"
+                data-title="Digital Signing Service"
+                data-role="UI/UX Designer & Frontend Developer"
+                data-tools="Figma, ASP.NET, C#, CSS, JavaScript"
+                data-duration="Mar 2025 – Sep 2025"
+                data-img="assets/images/projects/coa-login.png"
+                data-type="screenshot"
+                data-situation="Non-COA entities needed a secure and efficient way to manage digital document signing, approvals, and workflows."
+                data-task="I was responsible for designing the user interface in Figma and completing the front-end development of the web application."
+                data-action="Transformed Figma prototypes into a responsive interface using ASP.NET Web Forms, C#, CSS, and JavaScript. Focused on intuitive layouts, clear navigation, and smooth interaction flows."
+                data-result="Delivered a fully functional Digital Signing Service that allowed users to upload, review, approve, and digitally sign documents, streamlining document handling and reducing manual processes.">
+                View Project
+              </button>
             </div>
-            <p class="project-desc">A web application for non-COA entities to upload, review, approve, and digitally sign documents.</p>
-            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
-            <small class="project-meta"><b>Tools:</b> Figma, ASP.NET, C#, CSS, JavaScript</small>
-            <button class="btn-secondary view-project-btn"
-              data-title="Digital Signing Service"
-              data-role="UI/UX Designer & Frontend Developer"
-              data-tools="Figma, ASP.NET, C#, CSS, JavaScript"
-              data-duration="Mar 2025 – Sep 2025"
-              data-img="assets/images/projects/coa-login.png"
-              data-type="screenshot"
-              data-situation="Non-COA entities needed a secure and efficient way to manage digital document signing, approvals, and workflows."
-              data-task="I was responsible for designing the user interface in Figma and completing the front-end development of the web application."
-              data-action="Transformed Figma prototypes into a responsive interface using ASP.NET Web Forms, C#, CSS, and JavaScript. Focused on intuitive layouts, clear navigation, and smooth interaction flows."
-              data-result="Delivered a fully functional Digital Signing Service that allowed users to upload, review, approve, and digitally sign documents, streamlining document handling and reducing manual processes.">
-              View Project
-            </button>
-          </div>
+
           </div>
         </div>
+
         <button class="carousel-btn next" id="proj-next" aria-label="Next">&#8250;</button>
       </div>
+
       <div class="carousel-dots" id="proj-dots"></div>
     </div>
   </section>
@@ -344,34 +422,44 @@
   <!-- PROJECT MODAL -->
   <div class="proj-modal" id="proj-modal">
     <div class="proj-modal-overlay" id="proj-modal-overlay"></div>
+
     <div class="proj-modal-content">
       <button class="lightbox-close" id="proj-modal-close">&#10005;</button>
+
       <div class="proj-modal-img-wrapper" id="proj-modal-img-wrapper">
         <img src="" alt="" id="proj-modal-img" />
       </div>
+
       <div class="proj-modal-body">
         <h2 class="proj-modal-title" id="proj-modal-title"></h2>
+
         <div class="proj-modal-tags">
           <span class="exp-tag" id="proj-modal-role"></span>
           <span class="exp-tag" id="proj-modal-duration"></span>
         </div>
+
         <p class="proj-modal-tools" id="proj-modal-tools"></p>
+
         <a class="figma-link" id="proj-modal-figma" href="#" target="_blank" style="display:none;">
           🎨 View Figma Design
         </a>
+
         <div class="proj-modal-star">
           <div class="star-block">
             <h4>Situation</h4>
             <p id="proj-modal-situation"></p>
           </div>
+
           <div class="star-block">
             <h4>Task</h4>
             <p id="proj-modal-task"></p>
           </div>
+
           <div class="star-block">
             <h4>Action</h4>
             <p id="proj-modal-action"></p>
           </div>
+
           <div class="star-block">
             <h4>Result</h4>
             <p id="proj-modal-result"></p>
@@ -381,49 +469,55 @@
     </div>
   </div>
 
-        <!-- CONTACT -->
- <section id="contact" class="section contact-section contact-bg">
-  <div class="container">
-    <div class="contact-inspired">
-      <p class="contact-mini">let’s connect!</p>
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section contact-bg">
+    <div class="section-bubbles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-      <h2 class="contact-heading">
-        Let’s create something
-        <span>beautiful</span> together
-      </h2>
+    <div class="container">
+      <div class="contact-inspired">
+        <p class="contact-mini">let’s connect!</p>
 
-      <p class="contact-subtext">
-        I’m open to opportunities, collaborations, and creative projects.
-        Feel free to reach out through any of the platforms below.
-      </p>
+        <h2 class="contact-heading">
+          Let’s create something
+          <span>beautiful</span> together
+        </h2>
 
-      <div class="contact-links-row">
-        <a href="mailto:macaroline.saldo@gmail.com" class="contact-pill" aria-label="Email">
-          <img src="assets/images/icons/mail.png" alt="Email">
-          <span>Email</span>
-        </a>
+        <p class="contact-subtext">
+          I’m open to opportunities, collaborations, and creative projects.
+          Feel free to reach out through any of the platforms below.
+        </p>
 
-        <a href="https://www.linkedin.com/in/carolinesaldo/" target="_blank" class="contact-pill" aria-label="LinkedIn">
-          <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
-          <span>LinkedIn</span>
-        </a>
+        <div class="contact-links-row">
+          <a href="mailto:macaroline.saldo@gmail.com" class="contact-pill" aria-label="Email">
+            <img src="assets/images/icons/mail.png" alt="Email">
+            <span>Email</span>
+          </a>
 
-        <a href="https://github.com/macarolinesaldo" target="_blank" class="contact-pill" aria-label="GitHub">
-          <img src="assets/images/icons/github.png" alt="GitHub">
-          <span>GitHub</span>
-        </a>
+          <a href="https://www.linkedin.com/in/carolinesaldo/" target="_blank" class="contact-pill" aria-label="LinkedIn">
+            <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
+            <span>LinkedIn</span>
+          </a>
 
-        <a href="https://www.facebook.com/carolinesaldo" target="_blank" class="contact-pill" aria-label="Facebook">
-          <img src="assets/images/icons/facebook.png" alt="Facebook">
-          <span>Facebook</span>
-        </a>
+          <a href="https://github.com/macarolinesaldo" target="_blank" class="contact-pill" aria-label="GitHub">
+            <img src="assets/images/icons/github.png" alt="GitHub">
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://www.facebook.com/carolinesaldo" target="_blank" class="contact-pill" aria-label="Facebook">
+            <img src="assets/images/icons/facebook.png" alt="Facebook">
+            <span>Facebook</span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-    </div>
-  </div>
-</section>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <p>&copy; 2026 Caroline. All rights reserved.</p>
