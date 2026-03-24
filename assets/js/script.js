@@ -71,38 +71,6 @@ function initCarousel(trackId, prevBtnId, nextBtnId, dotsId) {
 initCarousel('cert-track', 'cert-prev', 'cert-next', 'cert-dots');
 initCarousel('proj-track', 'proj-prev', 'proj-next', 'proj-dots');
 
-
-// --- CONTACT FORM ---
-const sendBtn = document.getElementById('send-btn');
-
-sendBtn.addEventListener('click', () => {
-  const inputs = document.querySelectorAll('.form-input');
-  let allFilled = true;
-
-  inputs.forEach(input => {
-    if (!input.value.trim()) {
-      input.style.borderColor = '#e57373';
-      allFilled = false;
-    } else {
-      input.style.borderColor = '';
-    }
-  });
-
-  if (allFilled) {
-    sendBtn.textContent = 'Message Sent! 💕';
-    sendBtn.style.background = 'linear-gradient(135deg, #c2718f, #e8a0b8)';
-    sendBtn.disabled = true;
-    inputs.forEach(input => input.value = '');
-
-    setTimeout(() => {
-      sendBtn.textContent = 'Send Message';
-      sendBtn.style.background = '';
-      sendBtn.disabled = false;
-    }, 3000);
-  }
-});
-
-
 // --- ACTIVE NAV LINK on scroll ---
 const sections = document.querySelectorAll('section[id]');
 
@@ -150,6 +118,7 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
+
 // --- PROJECT MODAL ---
 const projModal        = document.getElementById('proj-modal');
 const projModalOverlay = document.getElementById('proj-modal-overlay');
@@ -157,7 +126,6 @@ const projModalClose   = document.getElementById('proj-modal-close');
 
 document.querySelectorAll('.view-project-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.getElementById('proj-modal-img').src         = btn.dataset.img;
     document.getElementById('proj-modal-title').textContent    = btn.dataset.title;
     document.getElementById('proj-modal-role').textContent     = btn.dataset.role;
     document.getElementById('proj-modal-duration').textContent = btn.dataset.duration;
@@ -166,6 +134,27 @@ document.querySelectorAll('.view-project-btn').forEach(btn => {
     document.getElementById('proj-modal-task').textContent     = btn.dataset.task;
     document.getElementById('proj-modal-action').textContent   = btn.dataset.action;
     document.getElementById('proj-modal-result').textContent   = btn.dataset.result;
+
+    // Show or hide modal image
+    const imgWrapper = document.getElementById('proj-modal-img-wrapper');
+    const modalImg   = document.getElementById('proj-modal-img');
+    if (btn.dataset.img) {
+      modalImg.src = btn.dataset.img;
+      imgWrapper.classList.remove('hidden');
+    } else {
+      modalImg.src = '';
+      imgWrapper.classList.add('hidden');
+    }
+
+    // Show or hide Figma link
+    const figmaLink = document.getElementById('proj-modal-figma');
+    if (btn.dataset.figma) {
+      figmaLink.href = btn.dataset.figma;
+      figmaLink.style.display = 'inline-block';
+    } else {
+      figmaLink.style.display = 'none';
+    }
+
     projModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
@@ -181,4 +170,9 @@ document.addEventListener('keydown', (e) => {
 function closeProjModal() {
   projModal.classList.remove('active');
   document.body.style.overflow = '';
+}
+if (btn.dataset.type === "logo") {
+  imgWrapper.classList.add("logo");
+} else {
+  imgWrapper.classList.remove("logo");
 }
