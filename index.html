@@ -111,24 +111,112 @@
   </section>
 
   <!-- CERTIFICATES -->
-  <section class="section" id="certificates">
-    <div class="container">
-      <h2 class="section-title">Certificates</h2>
-      <div class="divider"></div>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" id="cert-prev" aria-label="Previous">&#8249;</button>
-        <div class="carousel-track-container">
-          <div class="carousel-track" id="cert-track">
-            <div class="carousel-item">UI/UX Design Certificate</div>
-            <div class="carousel-item">Web Development Certificate</div>
-            <div class="carousel-item">OJT Completion (COA)</div>
+<section class="section" id="certificates">
+  <div class="container">
+    <h2 class="section-title">Certificates</h2>
+    <div class="divider"></div>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" id="cert-prev" aria-label="Previous">&#8249;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="cert-track">
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/webdev.jpg">
+            <img src="assets/images/certificates/webdev.jpg" alt="Web Development Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Web Development for Beginners: HTML, CSS & JavaScript</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">Feb. 20, 2026</p>
+            </div>
           </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/figma.jpg">
+            <img src="assets/images/certificates/figma.jpg" alt="Figma Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Figma Essential for User Interface and User Experience UI UX</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">Feb. 20, 2026</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/ui-ux.jpg">
+            <img src="assets/images/certificates/ui-ux.jpg" alt="UI/UX Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">UI/UX Design Masterclass with Adobe XD: From Beginner to Pro</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">Feb. 20, 2026</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/python1.jpg">
+            <img src="assets/images/certificates/python1.jpg" alt="Python Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Python for Complete Beginners</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">Feb. 20, 2026</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/python2.jpg">
+            <img src="assets/images/certificates/python2.jpg" alt="Python Web Developer Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Python Web Developer Masterclass - Build 6 Website</h3>
+              <p class="cert-issuer">Udemy</p>
+              <p class="cert-date">Feb. 20, 2026</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/38ef1015-45a6-4fff-9a0a-a23d49adc8d5.jpg">
+            <img src="assets/images/certificates/38ef1015-45a6-4fff-9a0a-a23d49adc8d5.jpg" alt="Flutter Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Dive Into Flutter Essentials and MVVM Structure</h3>
+              <p class="cert-issuer">University of Caloocan City</p>
+              <p class="cert-date">April 13, 2025</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/Ma. Caroline O. Saldo.jpg">
+            <img src="assets/images/certificates/Ma. Caroline O. Saldo.jpg" alt="Gordon College Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Mastering Digital Success: From Web Development to Virtual Innovation</h3>
+              <p class="cert-issuer">Gordon College</p>
+              <p class="cert-date">Feb. 8, 2025</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/Saldo, Ma. Caroline O..jpg">
+            <img src="assets/images/certificates/Saldo, Ma. Caroline O..jpg" alt="Recognition Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Certificate of Recognition — From Zero to Cloud: Understanding Platform as a Service</h3>
+              <p class="cert-issuer">University of Caloocan City</p>
+              <p class="cert-date">March 17, 2025</p>
+            </div>
+          </div>
+
+          <div class="carousel-item cert-item" data-img="assets/images/certificates/Saldo, Ma. Caroline O..png">
+            <img src="assets/images/certificates/Saldo, Ma. Caroline O..png" alt="IoT Certificate" class="cert-thumb" />
+            <div class="cert-info">
+              <h3 class="cert-title">Unlocking IoT Potential: Transforming IoT Projects Using Random Forest Algorithm</h3>
+              <p class="cert-issuer">University of Caloocan City</p>
+              <p class="cert-date">2025</p>
+            </div>
+          </div>
+
         </div>
-        <button class="carousel-btn next" id="cert-next" aria-label="Next">&#8250;</button>
       </div>
-      <div class="carousel-dots" id="cert-dots"></div>
+      <button class="carousel-btn next" id="cert-next" aria-label="Next">&#8250;</button>
     </div>
-  </section>
+    <div class="carousel-dots" id="cert-dots"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-overlay" id="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightbox-close">&#10005;</button>
+    <img src="" alt="Certificate" id="lightbox-img" />
+  </div>
+</div>
 
   <!-- PROJECTS -->
   <section class="section section-alt" id="projects">

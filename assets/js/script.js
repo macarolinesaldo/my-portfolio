@@ -11,7 +11,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close mobile menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
@@ -47,7 +46,6 @@ function initCarousel(trackId, prevBtnId, nextBtnId, dotsId) {
   let current = 0;
   const total  = items.length;
 
-  // Build dots
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
@@ -67,21 +65,19 @@ function initCarousel(trackId, prevBtnId, nextBtnId, dotsId) {
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  // Auto-advance every 4 seconds
   setInterval(() => goTo(current + 1), 4000);
 }
 
-// Init both carousels
-initCarousel('cert-track',  'cert-prev',  'cert-next',  'cert-dots');
-initCarousel('proj-track',  'proj-prev',  'proj-next',  'proj-dots');
+initCarousel('cert-track', 'cert-prev', 'cert-next', 'cert-dots');
+initCarousel('proj-track', 'proj-prev', 'proj-next', 'proj-dots');
 
 
-// --- CONTACT FORM: basic validation + feedback ---
+// --- CONTACT FORM ---
 const sendBtn = document.getElementById('send-btn');
 
 sendBtn.addEventListener('click', () => {
-  const inputs   = document.querySelectorAll('.form-input');
-  let   allFilled = true;
+  const inputs = document.querySelectorAll('.form-input');
+  let allFilled = true;
 
   inputs.forEach(input => {
     if (!input.value.trim()) {
@@ -126,3 +122,30 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+// --- LIGHTBOX ---
+const lightbox        = document.getElementById('lightbox');
+const lightboxImg     = document.getElementById('lightbox-img');
+const lightboxClose   = document.getElementById('lightbox-close');
+const lightboxOverlay = document.getElementById('lightbox-overlay');
+
+document.querySelectorAll('.cert-item').forEach(item => {
+  item.addEventListener('click', () => {
+    lightboxImg.src = item.dataset.img;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxOverlay.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
