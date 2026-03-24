@@ -149,3 +149,36 @@ function closeLightbox() {
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
+
+// --- PROJECT MODAL ---
+const projModal        = document.getElementById('proj-modal');
+const projModalOverlay = document.getElementById('proj-modal-overlay');
+const projModalClose   = document.getElementById('proj-modal-close');
+
+document.querySelectorAll('.view-project-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('proj-modal-img').src         = btn.dataset.img;
+    document.getElementById('proj-modal-title').textContent    = btn.dataset.title;
+    document.getElementById('proj-modal-role').textContent     = btn.dataset.role;
+    document.getElementById('proj-modal-duration').textContent = btn.dataset.duration;
+    document.getElementById('proj-modal-tools').textContent    = '🛠 ' + btn.dataset.tools;
+    document.getElementById('proj-modal-situation').textContent = btn.dataset.situation;
+    document.getElementById('proj-modal-task').textContent     = btn.dataset.task;
+    document.getElementById('proj-modal-action').textContent   = btn.dataset.action;
+    document.getElementById('proj-modal-result').textContent   = btn.dataset.result;
+    projModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+projModalClose.addEventListener('click', closeProjModal);
+projModalOverlay.addEventListener('click', closeProjModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeProjModal();
+});
+
+function closeProjModal() {
+  projModal.classList.remove('active');
+  document.body.style.overflow = '';
+}

@@ -16,6 +16,7 @@
     <div class="nav-logo">Caroline</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -62,6 +63,41 @@
       </p>
     </div>
   </section>
+
+<!-- EXPERIENCE -->
+<section class="section experience-section" id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="divider"></div>
+    <div class="experience-card">
+      <div class="exp-header">
+      <div class="exp-icon">
+       <img src="assets/images/icons/coa.png" alt="COA Logo" />
+      </div>
+        <div class="exp-meta">
+          <h3 class="exp-role">Documentation Specialist / Frontend Developer (Intern)</h3>
+          <p class="exp-company">Commission on Audit</p>
+          <p class="exp-date">May 2025 – September 2025</p>
+        </div>
+      </div>
+      <p class="exp-desc">
+        Worked on a Digital Signing Service (DSS) developed using ASP.NET, contributing to frontend development and system documentation. Designed UI components and visual assets using Figma and supported a multi-step document workflow including file upload, signer selection, and document preview to improve efficiency in digital document handling.
+      </p>
+      <div class="exp-skills">
+        <span class="exp-tag">Front-End Development</span>
+        <span class="exp-tag">ASP.NET</span>
+        <span class="exp-tag">C#</span>
+        <span class="exp-tag">CSS</span>
+        <span class="exp-tag">HTML</span>
+        <span class="exp-tag">Figma</span>
+        <span class="exp-tag">UI Design</span>
+        <span class="exp-tag">Documentation</span>
+        <span class="exp-tag">Visual Studio</span>
+        <span class="exp-tag">Team Coordination</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- SKILLS -->
   <section class="section skills-section" id="skills">
@@ -219,51 +255,125 @@
 </div>
 
   <!-- PROJECTS -->
-  <section class="section section-alt" id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="divider"></div>
-      <div class="projects-carousel">
-        <button class="carousel-btn prev" id="proj-prev" aria-label="Previous">&#8249;</button>
-        <div class="projects-track-container">
-          <div class="projects-track" id="proj-track">
-            <div class="project-card">
-              <div class="project-img-wrapper">
-                <img src="assets/images/project1.jpg" alt="NutriCycle" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=NutriCycle'" />
-              </div>
-              <h3 class="project-title">NutriCycle</h3>
-              <p class="project-desc">An IoT-based waste-to-value system that converts vegetable waste into poultry feed and compost.</p>
-              <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
-              <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS</small>
-              <a href="#" class="btn-secondary">View Project</a>
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="divider"></div>
+    <div class="projects-carousel">
+      <button class="carousel-btn prev" id="proj-prev" aria-label="Previous">&#8249;</button>
+      <div class="projects-track-container">
+        <div class="projects-track" id="proj-track">
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/project1.jpg" alt="NutriCycle" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=NutriCycle'" />
             </div>
-            <div class="project-card">
-              <div class="project-img-wrapper">
-                <img src="assets/images/project2.jpg" alt="Portfolio Website" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=Portfolio'" />
-              </div>
-              <h3 class="project-title">Portfolio Website</h3>
-              <p class="project-desc">A personal portfolio website showcasing my projects, skills, and experience with a clean and responsive design.</p>
-              <small class="project-meta"><b>Role:</b> Frontend Developer</small>
-              <small class="project-meta"><b>Tools:</b> HTML, CSS, JavaScript</small>
-              <a href="#" class="btn-secondary">View Project</a>
-            </div>
-            <div class="project-card">
-              <div class="project-img-wrapper">
-                <img src="assets/images/project3.jpg" alt="Login System" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=Login+System'" />
-              </div>
-              <h3 class="project-title">Login System</h3>
-              <p class="project-desc">A simple user authentication system with validation and limited login attempts.</p>
-              <small class="project-meta"><b>Role:</b> Developer</small>
-              <small class="project-meta"><b>Tools:</b> Python</small>
-              <a href="#" class="btn-secondary">View Project</a>
-            </div>
+            <h3 class="project-title">NutriCycle</h3>
+            <p class="project-desc">An IoT-based system that converts vegetable waste into poultry feed and compost using AI and hardware automation.</p>
+            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
+            <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, Raspberry Pi, ESP32</small>
+            <button class="btn-secondary view-project-btn"
+              data-title="NutriCycle"
+              data-role="UI/UX Designer & Frontend Developer"
+              data-tools="Figma, HTML, CSS, Raspberry Pi, ESP32"
+              data-duration="Sep 2025 – Present"
+              data-img="assets/images/project1.jpg"
+              data-situation="NutriCycle was developed to address increasing vegetable waste in wet markets in the Philippines, where large amounts of leafy vegetables are discarded daily. At the same time, poultry farmers face high feed costs making up 60–70% of production expenses."
+              data-task="I contributed to the design and documentation of NutriCycle, managed the composting processes, and assisted with IoT integration to develop a system that efficiently converts vegetable waste into poultry feed and compost."
+              data-action="We built a machine with AI-based image classification, Raspberry Pi processing, and ESP32-controlled hardware for automated sorting. We also developed a mobile app for real-time monitoring and conducted system testing."
+              data-result="NutriCycle successfully transformed vegetable waste into valuable agricultural products, reducing landfill waste and offering a cost-effective solution for poultry farmers while promoting sustainability.">
+              View Project
+            </button>
           </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/project2.jpg" alt="Fitscale" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=Fitscale'" />
+            </div>
+            <h3 class="project-title">Fitscale</h3>
+            <p class="project-desc">A fitness tracking app with a clean, intuitive interface to help users monitor workouts and progress.</p>
+            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
+            <small class="project-meta"><b>Tools:</b> Figma, HTML, CSS, JavaScript</small>
+            <button class="btn-secondary view-project-btn"
+              data-title="Fitscale"
+              data-role="UI/UX Designer & Frontend Developer"
+              data-tools="Figma, HTML, CSS, JavaScript"
+              data-duration="Aug 2024 – Apr 2025"
+              data-img="assets/images/project2.jpg"
+              data-situation="Many fitness apps were either too complex or lacked intuitive design, making it difficult for users to consistently track their progress."
+              data-task="My role was to contribute to the UI/UX design and frontend development, ensuring the app's interface was clean, accessible, and motivating."
+              data-action="Designed wireframes and interactive prototypes in Figma. Implemented responsive layouts using HTML, CSS, and JavaScript. Applied user-centered design principles to create a visually appealing interface."
+              data-result="The Fitscale app successfully helped users track workouts and progress with ease. My contributions improved onboarding usability and reduced drop-off rates during initial setup.">
+              View Project
+            </button>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/project3.jpg" alt="Digital Signing Service" onerror="this.src='https://placehold.co/400x220/fce4ec/c2718f?text=DSS'" />
+            </div>
+            <h3 class="project-title">Digital Signing Service</h3>
+            <p class="project-desc">A web application for non-COA entities to upload, review, approve, and digitally sign documents.</p>
+            <small class="project-meta"><b>Role:</b> UI/UX Designer & Frontend Developer</small>
+            <small class="project-meta"><b>Tools:</b> Figma, ASP.NET, C#, CSS, JavaScript</small>
+            <button class="btn-secondary view-project-btn"
+              data-title="Digital Signing Service"
+              data-role="UI/UX Designer & Frontend Developer"
+              data-tools="Figma, ASP.NET, C#, CSS, JavaScript"
+              data-duration="Mar 2025 – Sep 2025"
+              data-img="assets/images/project3.jpg"
+              data-situation="Non-COA entities needed a secure and efficient way to manage digital document signing, approvals, and workflows."
+              data-task="I was responsible for designing the user interface in Figma and completing the front-end development of the web application."
+              data-action="Transformed Figma prototypes into a responsive interface using ASP.NET Web Forms, C#, CSS, and JavaScript. Focused on intuitive layouts, clear navigation, and smooth interaction flows."
+              data-result="Delivered a fully functional Digital Signing Service that allowed users to upload, review, approve, and digitally sign documents, streamlining document handling and reducing manual processes.">
+              View Project
+            </button>
+          </div>
+
         </div>
-        <button class="carousel-btn next" id="proj-next" aria-label="Next">&#8250;</button>
       </div>
-      <div class="carousel-dots" id="proj-dots"></div>
+      <button class="carousel-btn next" id="proj-next" aria-label="Next">&#8250;</button>
     </div>
-  </section>
+    <div class="carousel-dots" id="proj-dots"></div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="proj-modal" id="proj-modal">
+  <div class="proj-modal-overlay" id="proj-modal-overlay"></div>
+  <div class="proj-modal-content">
+    <button class="lightbox-close" id="proj-modal-close">&#10005;</button>
+    <div class="proj-modal-img-wrapper">
+      <img src="" alt="" id="proj-modal-img" />
+    </div>
+    <div class="proj-modal-body">
+      <h2 class="proj-modal-title" id="proj-modal-title"></h2>
+      <div class="proj-modal-tags">
+        <span class="exp-tag" id="proj-modal-role"></span>
+        <span class="exp-tag" id="proj-modal-duration"></span>
+      </div>
+      <p class="proj-modal-tools" id="proj-modal-tools"></p>
+      <div class="proj-modal-star">
+        <div class="star-block">
+          <h4>Situation</h4>
+          <p id="proj-modal-situation"></p>
+        </div>
+        <div class="star-block">
+          <h4>Task</h4>
+          <p id="proj-modal-task"></p>
+        </div>
+        <div class="star-block">
+          <h4>Action</h4>
+          <p id="proj-modal-action"></p>
+        </div>
+        <div class="star-block">
+          <h4>Result</h4>
+          <p id="proj-modal-result"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- CONTACT -->
   <section class="section contact-section" id="contact">
