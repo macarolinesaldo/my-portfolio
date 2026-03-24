@@ -285,3 +285,14 @@ document.addEventListener('keydown', (e) => {
     closeProjModal();
   }
 });
+const logo = document.querySelector('.nav-logo');
+
+if (logo) {
+  logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
