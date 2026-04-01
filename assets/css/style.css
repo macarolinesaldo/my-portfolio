@@ -170,7 +170,8 @@ img {
 }
 
 .hero-text,
-.hero-visual {
+.hero-visual,
+.hero-image-wrapper {
   flex: 1;
 }
 
@@ -618,7 +619,7 @@ img {
 }
 
 .skills-grid--four {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   margin-top: 24px;
 }
 
@@ -1483,5 +1484,84 @@ img {
     width: 42px;
     height: 42px;
     font-size: 1.2rem;
+  }
+}
+/* --- HERO SUBTITLE --- */
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+/* --- HERO BUTTONS --- */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+  background: transparent;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--pink);
+  color: var(--white);
+  box-shadow: 0 8px 24px var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Mobile hero buttons */
+@media (max-width: 768px) {
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* --- SKILLS GROUP LABEL --- */
+.skills-group-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin: 32px 0 12px;
+}
+
+.skills-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skills-grid--five {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 900px) {
+  .skills-grid--five {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid--five {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-grid--three {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
